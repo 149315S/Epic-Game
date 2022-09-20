@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1366
     height: 685
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 4}
-  m_MinSize: {x: 875, y: 371}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 321}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 49
+  controlID: 103
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_MinSize: {x: 676, y: 321}
   m_MaxSize: {x: 18003, y: 14021}
   vertical: 0
-  controlID: 85
+  controlID: 35
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -286,7 +286,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 277
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -329,22 +329,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Course Library/Obstacles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 45
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Course Library/Obstacles
   m_LastFoldersGridSize: 45
   m_LastProjectPath: C:\Users\ChristianAM\Documents\Epic-Game\Coding With Carl
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: de460000
-    m_LastClickedID: 18142
-    m_ExpandedIDs: 00000000d246000000ca9a3b
+    m_SelectedIDs: 78480000
+    m_LastClickedID: 18552
+    m_ExpandedIDs: 00000000e6460000ea46000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -553,9 +553,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.08270283, y: 5.7313766, z: -5.920601}
+    m_Target: {x: -5.5135202, y: 7.2348804, z: 43.2586}
     speed: 2
-    m_Value: {x: -0.08270283, y: 5.7313766, z: -5.920601}
+    m_Value: {x: -5.5135202, y: 7.2348804, z: 43.2586}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -602,20 +602,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2438279, y: 0.00057941605, z: -0.00014897392, w: -0.96982604}
+    m_Target: {x: -0.33847877, y: -0.007907578, z: 0.0028381522, w: -0.94094676}
     speed: 2
-    m_Value: {x: -0.24382609, y: 0.00057941175, z: -0.00014897282, w: -0.9698189}
+    m_Value: {x: -0.3384755, y: -0.007907501, z: 0.0028381248, w: -0.9409377}
   m_Size:
-    m_Target: 4.5597963
+    m_Target: 16.896143
     speed: 2
-    m_Value: 4.5597963
+    m_Value: 16.896143
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.0005
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.5402294
+    m_SpeedNormalized: 0.76999974
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -661,9 +661,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 76faffff
-      m_LastClickedID: -1418
-      m_ExpandedIDs: fcfaffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3afaffffa8faffff66fbfffff4ffffff9c440000a4440000c0440000d0440000de440000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -679,7 +679,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 2}
+        m_ClientGUIView: {fileID: 9}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
