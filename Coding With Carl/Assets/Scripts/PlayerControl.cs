@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    // Variables Here
-    public float speed = 8.0f;
+    //Privarte Variables
+    private float speed = 15.0f;
+    private float turnSpeed = 35f;
+    private float horizontalInput;
+    private float forwardInput;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,11 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    transform.Translate(Vector3.forward * Time.deltaTime * speed);
+    //Player movement
+    horizontalInput = Input.GetAxis("Horizontal");
+    forwardInput = Input.GetAxis("Vertical");
+    //Player's speed
+    transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+    transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 }

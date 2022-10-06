@@ -1616,6 +1616,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1755482474869422323, guid: e1eb933d33fd29a418dd4be7ee65b129, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755482474869422323, guid: e1eb933d33fd29a418dd4be7ee65b129, type: 3}
+      propertyPath: turnSpeed
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5362125659007731158, guid: e1eb933d33fd29a418dd4be7ee65b129, type: 3}
       propertyPath: m_Mass
       value: 1000
