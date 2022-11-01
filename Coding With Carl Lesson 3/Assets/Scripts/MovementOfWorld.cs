@@ -5,19 +5,25 @@ using UnityEngine;
 public class MovementOfWorld : MonoBehaviour
 {
     private float speed = 15;
-    private PlayerController playercontrollerscript;
+    private float leftborder = -15;
+    private PlayerController playerControllerScript;
     // Start is called before the first frame update
     void Start()
     {
-        PlayerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(PlayerControllerScript.gameOver == false)
+        if(transform.position.x < leftborder && gameObject.CompareTag("Obstacle"))
         {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+            Destroy(gameObject);
+        }
+
+        if(playerControllerScript.gameOver == false)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
     }
 }
