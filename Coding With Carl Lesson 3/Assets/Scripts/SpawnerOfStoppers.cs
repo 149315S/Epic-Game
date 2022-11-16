@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SpawnerOfStoppers : MonoBehaviour
 {
-    //where and what spawns
+    //where and what and how spawns
     public GameObject obstaclePrefab;
     private Vector3 spawnPos = new Vector3(25, 0, 0);
+    private PlayerController playerControllerScript;
     //spawn rate
     private float startDelay = 2;
     private float repeatRate = 2;
@@ -15,6 +16,7 @@ public class SpawnerOfStoppers : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,9 @@ public class SpawnerOfStoppers : MonoBehaviour
 
     void SpawnObstacle()
     {
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        if(playerControllerScript.gameOver == false)
+        {
+            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        }
     } 
 }
