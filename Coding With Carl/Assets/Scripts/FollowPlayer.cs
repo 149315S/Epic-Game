@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
+    private bool cameraSetting = false;
     //Refrences game object for database
     public GameObject player;  
     //sets local variable for offset
@@ -18,6 +19,17 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+        cameraSetting = !cameraSetting;
+        }
+        if(cameraSetting = false)
+        {
         transform.position = player.transform.position + offset;
+        }
+        else if(cameraSetting = false)
+        {
+        transform.position = player.transform.position;
+        }
     }
 }
