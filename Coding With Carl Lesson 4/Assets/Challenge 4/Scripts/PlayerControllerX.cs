@@ -40,15 +40,16 @@ public class PlayerControllerX : MonoBehaviour
             Destroy(other.gameObject);
             hasPowerup = true;
             powerupIndicator.SetActive(true);
+            StartCoroutine(PowerupCountdownRoutine());
         }
     }
 
     // Coroutine to count down powerup duration
-    IEnumerator PowerupCooldown()
+   IEnumerator PowerupCountdownRoutine()
     {
-        yield return new WaitForSeconds(powerUpDuration);
-        hasPowerup = false;
-        powerupIndicator.SetActive(false);
+        yield return new WaitForSeconds(5);
+        hasPowerup = false; 
+        powerupIndicator.gameObject.SetActive(false);
     }
 
     // If Player collides with enemy
@@ -67,11 +68,6 @@ public class PlayerControllerX : MonoBehaviour
             {
                 enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
             }
-
-
         }
     }
-
-
-
 }
