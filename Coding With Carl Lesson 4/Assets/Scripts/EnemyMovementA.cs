@@ -24,4 +24,11 @@ public class EnemyMovementA : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Delete"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

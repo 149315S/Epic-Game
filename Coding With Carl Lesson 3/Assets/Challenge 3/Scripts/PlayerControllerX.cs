@@ -39,7 +39,6 @@ public class PlayerControllerX : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * floatForce);
         }
-        if()
     }
 
     private void OnCollisionEnter(Collision other)

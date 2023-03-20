@@ -6,10 +6,12 @@ public class SpawnManagerX : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerupPrefab;
+    public GameObject powerupPrefab2;
 
     private float spawnRangeX = 10;
     private float spawnZMin = 15; // set min spawn Z
     private float spawnZMax = 25; // set max spawn Z
+    public float powerSpawnChance;
 
     public int enemyCount;
     public int waveCount = 1;
@@ -45,7 +47,15 @@ public class SpawnManagerX : MonoBehaviour
         // If no powerups remain, spawn a powerup
         if (GameObject.FindGameObjectsWithTag("Powerup").Length == 0) // check that there are zero powerups
         {
-            Instantiate(powerupPrefab, GenerateSpawnPosition() + powerupSpawnOffset, powerupPrefab.transform.rotation);
+            powerSpawnChance = Random.Range(0,4);
+            if(powerSpawnChance < 3)
+            {
+                Instantiate(powerupPrefab, GenerateSpawnPosition() + powerupSpawnOffset, powerupPrefab.transform.rotation);
+            }
+            else
+            {
+                Instantiate(powerupPrefab2, GenerateSpawnPosition() + powerupSpawnOffset, powerupPrefab.transform.rotation);
+            }
         }
 
         // Spawn number of enemy balls based on wave number

@@ -14,6 +14,8 @@ public class PlayerControllerX : MonoBehaviour
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
+    public float boostSpeed = 5; //
+    Vector3 Zero = new Vector3(0,0,0);
     
     void Start()
     {
@@ -30,6 +32,35 @@ public class PlayerControllerX : MonoBehaviour
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            playerRb.AddForce(focalPoint.transform.forward * boostSpeed * speed * Time.deltaTime);
+        }
+        //Stops out-of-bounds no clipping
+        if(transform.position.x < -25)
+        {
+            transform.position = Zero;
+        }
+        if(transform.position.x > 25)
+        {
+            transform.position = Zero;
+        }
+        if(transform.position.z < -15)
+        {
+            transform.position = Zero;
+        }
+        if(transform.position.z > 35)
+        {
+            transform.position = Zero;
+        }
+        if(transform.position.y < -6)
+        {
+            transform.position = Zero;
+        }
+        if(transform.position.y > 6)
+        {
+            transform.position = Zero;
+        }
     }
 
     // If Player collides with powerup, activate powerup
@@ -40,6 +71,7 @@ public class PlayerControllerX : MonoBehaviour
             Destroy(other.gameObject);
             hasPowerup = true;
             powerupIndicator.SetActive(true);
+            boostSpeed = 7.5f;
             StartCoroutine(PowerupCountdownRoutine());
         }
     }
@@ -49,6 +81,7 @@ public class PlayerControllerX : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         hasPowerup = false; 
+        boostSpeed = 5;
         powerupIndicator.gameObject.SetActive(false);
     }
 
