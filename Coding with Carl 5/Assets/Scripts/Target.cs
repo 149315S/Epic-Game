@@ -44,12 +44,15 @@ public class Target : MonoBehaviour
     {
         return Random.Range(-maxTorque,maxTorque);
     }
-
-    private void OnMouseDown()
+    public void DestroyTarget()
     {
-        Destroy(gameObject);
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
+        if (gameManager.gameOver==false)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position,
+            explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -14,11 +14,12 @@ public class GameManager : MonoBehaviour
     public GameObject startMenu;
     public TextMeshProUGUI livesText;
     public GameObject pauseScreen;
+    public GameObject volumeSlider;
     private bool paused;
     private int lives;
     public float spawnRate = 1;
     private int score;
-    private bool gameOver;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Check if the user has pressed the P key
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ChangePaused();
+        }
+
     }
 
     IEnumerator SpawnTarget()
@@ -77,6 +83,25 @@ public class GameManager : MonoBehaviour
         spawnRate /= difficulty;
         UpdateScore(0);
         startMenu.gameObject.SetActive(false);
+        volumeSlider.gameObject.SetActive(false);
         UpdateLives(3);
     }
+    void ChangePaused()
+    {
+        if (!paused)
+        {
+            paused = true;
+            pauseScreen.SetActive(true);
+            volumeSlider.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            paused = false;
+            pauseScreen.SetActive(false);
+            volumeSlider.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
 }
