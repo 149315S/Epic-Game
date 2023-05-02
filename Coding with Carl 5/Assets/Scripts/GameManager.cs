@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private int lives;
     public float spawnRate = 1;
     private int score;
-    public bool gameOver;
+    public   bool gameOver;
 
     // Start is called before the first frame update
     void Start()

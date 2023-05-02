@@ -18,19 +18,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.D))
         { 
-            transform.Translate(new Vector3(Movement,0.5f,0));
+            transform.Translate(new Vector3(Movement,0,0));
         }
         if(Input.GetKeyDown(KeyCode.A))
         { 
-            transform.Translate(-Movement,0.5f,0);
+            transform.Translate(-Movement,0,0);
         }
         if(Input.GetKeyDown(KeyCode.W))
         { 
-            transform.Translate(0,0.5f,Movement);
+            transform.Translate(0,0,Movement);
         }
         if(Input.GetKeyDown(KeyCode.S))
         { 
-            transform.Translate(0,0.5f,-Movement);
+            transform.Translate(0,0,-Movement);
         }  
     }
     private void OnCollisionEnter(Collision collision)
